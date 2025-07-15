@@ -1,4 +1,4 @@
-import { LoaderCircle, Pencil, Plus } from "lucide-react";
+import { LoaderCircle, Plus } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,7 +27,6 @@ import toast from "react-hot-toast";
 
 type IrrigationSchema = z.infer<typeof irrigationSchema>;
 
-// Adaptação para aceitar e controlar a abertura/fechamento externamente
 type AddIrrigationDialogProps = {
   irrigationToEdit?: {
     id: string;
@@ -35,8 +34,8 @@ type AddIrrigationDialogProps = {
     specificDate: string;
     time: string;
   };
-  open: boolean; // Controlado pelo componente pai (Dashboard)
-  onOpenChange: (open: boolean) => void; // Para notificar o pai sobre mudanças no estado de abertura
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 };
 
 export function AddIrrigationDialog({
@@ -126,7 +125,7 @@ export function AddIrrigationDialog({
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent className="max-w-md">
+      <DialogContent className="max-w-md max-md:w-11/12 max-md:overflow-y-auto">
         <DialogHeader>
           <DialogTitle>
             {isEditing ? "Editar Irrigação" : "Agendar Irrigação"}

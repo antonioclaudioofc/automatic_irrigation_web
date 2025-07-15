@@ -205,7 +205,7 @@ export function Dashboard() {
             <h2 className="text-3xl font-bold max-md:text-center">
               Agendamentos de Irrigação
             </h2>
-            <div className="max-md:w-full">
+            <div className="max-md:w-full max-md:mt-5">
               {/* Diálogo de adicionar/editar irrigação */}
               <AddIrrigationDialog
                 irrigationToEdit={editData || undefined}
@@ -229,7 +229,7 @@ export function Dashboard() {
                   Object.values(data).map((item) => (
                     <div
                       key={item.id}
-                      className="border p-4 rounded-md shadow-sm bg-emerald-50"
+                      className="border p-4 rounded-md shadow-sm bg-white"
                     >
                       <p>
                         <strong>Planta:</strong> {item.plantName}
